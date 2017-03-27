@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form</title>
+    <style>
+        .comfort { background: lightyellow ;
+                border: 10px solid yellow ;
+                margin-bottom: 10px ;
+                width: 720px ;
+                text-align: top ; }
+        .narrow { width: 180px ;
+                   display: inline-block;
+                   text-align: right;
+                   text-align: top;
+                    }
+        .zappy {width: auto;}
+
+        .loose { background: lightgrey;
+                 color: red;
+                 }  
+
+        .tight{   width: 360px;
+                  height: 50px; } 
+
+        input:hover { font-size: 25px }        
+
+        label:hover { font-size: 25px }
+
+
+
+    </style>
+</head>
+<body>
+         <h1> Please Enter your Details For Our Dating Website </h1>
+<form>
+        <fieldset class="comfort">
+        
+        			<legend><label>Your Face</label></legend>
+        			 <label class="narrow"> Your Image : </label> <div class="narrow"><input type="file" accept="image/*" id='ab' onchange="previewFile()"> </div> <br>
+        			 <label class="narrow"> Image Preview :  </label><div class="narrow"> <img id="Preview"/></div> <br>
+        </fieldset>
+
+
+        <fieldset class="comfort">
+        	<legend><label>Your General Details</label></legend>
+        	<label class="narrow">Name : </label> <div class="narrow"><input type="text" name="yourname" placeholder="Your Full Name" required="name"></div><br>
+        	<label class="narrow"> Gender : </label> <div class="narrow zappy"><input type="radio" name="Gender" value="Male" required="Gender">Male<input type="radio" name="Gender" value="Female" required="Gender"> Female</div> <br>
+        	<label class="narrow">Age :</label> <div class="narrow"><input type="number" name="Age" value="18" required="Age"></div> <br>
+        	<label class="narrow"> Date Of Birth :</label><div class="narrow"> <input type="datetime-local" name="datetime" value="dd/mm/yy" required="datetime"></div> <br>
+        	<label class="narrow"> Favorite Color : </label><div class="narrow zappy"><input type="color" name="color" value="black" required="color"></div> <br>
+        	<label class="narrow"> Which Country :</label> <div class="narrow zappy"><select name="country" required="country">
+        	<option value="No selection">No Selection</option>  
+        	<option value="new zealand"> New Zealand</option>
+        	<option value="australia"> Australia</option>
+        	<option value="west indies"> West Indies</option>
+        	<option value="srilanka">Srilanka</option>
+        	<option value="india"> India</option>
+        	<option value="south africa">South Africa</option>      
+        	</select></div> <br>
+        </fieldset>
+        <fieldset class="comfort">
+        	<legend><label> Your Indicators</label></legend>
+        	<label class="narrow">Height:</label> <div class="narrow zappy loose">Short<input type="range" name="height" value="center" required="height">Tall</div> <br>
+        	<label class="narrow">Salary:</label><div class="narrow zappy loose"> Poor<input type="range" name="salary" value="center" required="salary">Rich</div>
+        </fieldset>
+        <fieldset class="comfort">
+        	<legend><label>Your Contact Information</label></legend>
+        	<label class="narrow">Email:</label> <div class="narrow"><input type="email" name="email" required="email"></div> <br>
+        	<label class="narrow">Mobile: </label><div class="narrow"><input type="mobile number" name="mobilenumber" required="mobile"></div> <br>
+            <label class="narrow">Address:</label> <br>	<div class="narrow zappy tight"><textarea name="address" rows="4" cols="40" required="address"></textarea></div> <br>
+            <div style="width: 720px">
+            <label>Method to Contact You: <input type="checkbox" name="methods" ; class="zappy">Email <input type="checkbox" name="methods">Whatsapp <input type="checkbox" name="methods">In-app Chat</label>
+            </div>
+        </fieldset>
+        <input type="submit" name="submit" value="submit" required="submit">
+</form>
+          <script type="text/javascript">
+           function previewFile() {
+  var preview = document.getElementById('Preview');
+ var filex    = document.getElementById('ab').files[0];
+  var reader  = new FileReader();
+
+
+  reader.addEventListener("load", function () {
+    preview.src = reader.result;
+  }, false);
+
+  if (filex) {
+    reader.readAsDataURL(filex);
+  }
+}
+       </script> 
+</body>
+</html>
